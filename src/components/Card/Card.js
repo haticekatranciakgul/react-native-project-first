@@ -1,16 +1,16 @@
 import react from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, Alert } from 'react-native';
 import styles from './Card.style';
 
 
 const Card = (props) => {
     return (
-        <View style={styles.card_container}>
-            <View style={styles.card_body}>
-                <Text style={styles.card_title}>Eddard Stark</Text>
-                <Text style={styles.card_text}>Winter is coming...</Text>
+        <View style={styles.container}>
+            <View style={styles.body}>
+                <Text style={styles.title}>{props.title}</Text>
+                <Text style={styles.text}>{props.text}</Text>
             </View>
-            <TouchableOpacity style={styles.card_button_container}>
+            <TouchableOpacity style={styles.button_container} onPress={() => Alert.alert('Liked')}>
                 <Text>I LIKED</Text>
             </TouchableOpacity>
         </View>
